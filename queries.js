@@ -18,7 +18,7 @@ const getEnergyData = (request, response) => {
   console.log("EDate :", EDate);
   console.log("BDate :", BDate);
 
-  pool.query('Select timestamp as date, asset_property_value as metric from assetpropertyupdates where asset_id = $1 and asset_property_id = $2 and timestamp between $3 and $4  ',
+  pool.query('Select timestamp as date, asset_property_value as metric from assetpropertyupdates where asset_property_quality  = \'GOOD\' and asset_id = $1 and asset_property_id = $2 and timestamp between $3 and $4  ',
   [id,typeid,BDate,EDate], (error, results) => {  
     if (error) {
       throw error;
