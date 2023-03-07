@@ -1,13 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express()
-
-
 const cors = require('cors');
 app.use(cors({origin: true}))
-
-// const app = express();
-// const cors = require('cors')
 
 const port = 3000;
 
@@ -32,4 +27,4 @@ app.get('/users/:id', db.getEnergyData);
 var server = app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });
-server.setTimeout(300000);
+//server.setTimeout(300000);
